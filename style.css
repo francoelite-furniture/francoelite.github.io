@@ -1,0 +1,52 @@
+/* style.css */
+
+/* ===== Root Variables ===== / :root { --primary-color: #05472a; / Navy green / --secondary-color: #2e8b57; / Classic green */ --background-color: #ffffff; --text-color: #1a1a1a; --accent-color: #e0ffe0; --hover-bubble: rgba(46, 139, 87, 0.3); }
+
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--background-color); color: var(--text-color); overflow-x: hidden; }
+
+/* ===== Header Navigation ===== */ header { background-color: var(--primary-color); color: white; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+
+nav { display: flex; gap: 1.5rem; }
+
+nav a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+
+nav a:hover { color: var(--accent-color); }
+
+.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+
+.hamburger div { width: 25px; height: 3px; background: white; }
+
+/* ===== Hero Section ===== */ .hero { background-image: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4'); background-size: cover; background-position: center; color: white; text-align: center; padding: 6rem 1rem; position: relative; }
+
+.hero::after { content: ""; background: rgba(0, 0, 0, 0.4); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+.hero h1 { position: relative; z-index: 2; font-size: 3rem; }
+
+.hero p { position: relative; z-index: 2; font-size: 1.2rem; margin-top: 1rem; }
+
+/* ===== Section Styling ===== */ section { padding: 3rem 2rem; position: relative; }
+
+section h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+
+.catalogue { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+
+.catalogue .item { border: 1px solid #ddd; padding: 1rem; border-radius: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.05); transition: 0.3s; }
+
+.catalogue .item:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+
+/* ===== Leaf Decoration ===== */ .leaf-deco { position: absolute; top: 10px; left: 10px; width: 80px; opacity: 0.15; }
+
+/* ===== Footer ===== */ footer { background: var(--primary-color); color: white; text-align: center; padding: 2rem; }
+
+.socials { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+
+.socials a { color: white; font-size: 1.5rem; transition: 0.3s; }
+
+.socials a:hover { color: var(--accent-color); }
+
+/* ===== Bubble Animation on Click ===== */ body:active::after { content: ""; position: absolute; width: 200px; height: 200px; background: var(--hover-bubble); border-radius: 50%; animation: bubble 0.5s ease-out forwards; }
+
+@keyframes bubble { 0% { transform: scale(0); opacity: 0.8; } 100% { transform: scale(4); opacity: 0; } }
+
+/* ===== Responsive Navigation ===== */ @media (max-width: 768px) { nav { display: none; } .hamburger { display: flex; } }
+
